@@ -212,16 +212,22 @@ def main():
     st.sidebar.write(f"Total devices: {len(search_engine.devices)}")
 
     # API Key status
-    api_key_set = bool(os.getenv("OPENAI_API_KEY"))
+    env_api_key = os.getenv("OPENAI_API_KEY")
+    secret_api_key = st.secrets.get("openai", {}).get("api_key")
+    api_key_set = bool(env_api_key or secret_api_key)
     status = "✅ Available" if api_key_set else "⚠️ Not set (keyword search only)"
+    source = "OpenAI environment variable" if env_api_key else "Streamlit secrets" if secret_api_key else "None"
+
     st.sidebar.markdown("### 🔑 OpenAI API Key")
     st.sidebar.write(f"Status: {status}")
+    if api_key_set:
+        st.sidebar.write(f"Source: {source}")
 
     if not api_key_set:
         st.sidebar.markdown("""
         **To enable semantic search:**
         1. Get API key from [OpenAI](https://platform.openai.com/api-keys)
-        2. Set environment variable: `export OPENAI_API_KEY=your_key`
+        2. Add it to your Streamlit secrets or set `OPENAI_API_KEY`
         3. Restart the app
         """)
 
