@@ -75,259 +75,222 @@
     "id": "dev-013",
     "name": "Adson Forceps",
     "description": "Delicate forceps with fine tips used for grasping small tissues and sutures",
-    "use": "Plastic surgery, ophthalmic procedures, microvascular surgery, wound closure",
-    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&crop=center"
+    "use": "Plastic surgery, ophthalmic procedures, microvascular surgery, wound closure"
   },
   {
     "id": "dev-014",
     "name": "Adson-Brown Forceps",
     "description": "Fine-tipped forceps with platform for enhanced precision in tissue handling",
-    "use": "Neurosurgery, plastic surgery, delicate tissue manipulation, suturing",
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center"
+    "use": "Neurosurgery, plastic surgery, delicate tissue manipulation, suturing"
   },
   {
     "id": "dev-015",
     "name": "Adson Tissue Forceps",
     "description": "Toothed forceps designed for grasping and holding tissues firmly",
-    "use": "General surgery, tissue dissection, wound debridement, biopsy procedures",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center"
+    "use": "General surgery, tissue dissection, wound debridement, biopsy procedures"
   },
   {
     "id": "dev-016",
     "name": "Adson Dressing Forceps",
     "description": "Smooth forceps used for handling dressings and non-traumatic tissue manipulation",
-    "use": "Wound dressing, sterile field procedures, delicate tissue handling",
-    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center"
+    "use": "Wound dressing, sterile field procedures, delicate tissue handling"
   },
   {
     "id": "dev-017",
     "name": "Thumb Forceps",
     "description": "Spring-loaded forceps operated by thumb and finger for precise grasping",
-    "use": "General surgery, tissue manipulation, suture handling, instrument passing",
-    "image": "https://images.unsplash.com/photo-1585435557343-3b092031e2bb?w=400&h=300&fit=crop&crop=center"
+    "use": "General surgery, tissue manipulation, suture handling, instrument passing"
   },
   {
     "id": "dev-018",
     "name": "Tissue Forceps",
     "description": "Forceps with serrated tips for securely grasping tissues without slipping",
-    "use": "Tissue dissection, organ manipulation, surgical retraction, biopsy",
-    "image": "https://images.unsplash.com/photo-1576670159801-4f05f16b9b0d?w=400&h=300&fit=crop&crop=center"
+    "use": "Tissue dissection, organ manipulation, surgical retraction, biopsy"
   },
   {
     "id": "dev-019",
     "name": "Hemostatic Forceps",
     "description": "Crimping forceps used to control bleeding by clamping blood vessels",
-    "use": "Vessel ligation, hemorrhage control, surgical hemostasis, clamping procedures",
-    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center"
+    "use": "Vessel ligation, hemorrhage control, surgical hemostasis, clamping procedures"
   },
   {
     "id": "dev-020",
     "name": "Kelly Forceps",
     "description": "Curved hemostatic forceps with serrated jaws for secure vessel clamping",
-    "use": "Deep tissue procedures, vessel occlusion, surgical hemostasis, clamping",
-    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&crop=center"
+    "use": "Deep tissue procedures, vessel occlusion, surgical hemostasis, clamping"
   },
   {
     "id": "dev-021",
     "name": "Mosquito Forceps",
     "description": "Small, straight hemostatic forceps for delicate vessel control",
-    "use": "Fine vessel ligation, pediatric surgery, delicate hemostasis, microvascular work",
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center"
+    "use": "Fine vessel ligation, pediatric surgery, delicate hemostasis, microvascular work"
   },
   {
     "id": "dev-022",
     "name": "Allis Tissue Forceps",
     "description": "Forceps with multiple sharp teeth for grasping tough tissues",
-    "use": "Tissue grasping, organ manipulation, surgical retraction, wound closure",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center"
+    "use": "Tissue grasping, organ manipulation, surgical retraction, wound closure"
   },
   {
     "id": "dev-023",
     "name": "Babcock Forceps",
     "description": "Gentle forceps with atraumatic tips for handling delicate tissues and organs",
-    "use": "Intestinal surgery, organ manipulation, atraumatic tissue grasping, laparotomy",
-    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center"
+    "use": "Intestinal surgery, organ manipulation, atraumatic tissue grasping, laparotomy"
   },
   {
     "id": "dev-024",
     "name": "Debakey Forceps",
     "description": "Atraumatic vascular forceps with fine serrations for vessel handling",
-    "use": "Cardiovascular surgery, vascular anastomosis, delicate tissue manipulation",
-    "image": "https://images.unsplash.com/photo-1585435557343-3b092031e2bb?w=400&h=300&fit=crop&crop=center"
+    "use": "Cardiovascular surgery, vascular anastomosis, delicate tissue manipulation"
   },
   {
     "id": "dev-025",
     "name": "Adson Forceps 4.75\"",
     "description": "Standard size delicate forceps with fine tips for precise tissue grasping",
-    "use": "General microsurgery, plastic surgery, ophthalmic procedures, wound closure",
-    "image": "https://images.unsplash.com/photo-1576670159801-4f05f16b9b0d?w=400&h=300&fit=crop&crop=center"
+    "use": "General microsurgery, plastic surgery, ophthalmic procedures, wound closure"
   },
   {
     "id": "dev-026",
     "name": "Adson Forceps 4.5\"",
     "description": "Compact delicate forceps with fine tips for precision work in tight spaces",
-    "use": "Microsurgery, pediatric surgery, confined surgical fields, delicate suturing",
-    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center"
+    "use": "Microsurgery, pediatric surgery, confined surgical fields, delicate suturing"
   },
   {
     "id": "dev-027",
     "name": "Adson Forceps 6\"",
     "description": "Extended length delicate forceps for deeper tissue access",
-    "use": "Deep wound closure, extended reach procedures, plastic surgery, suturing",
-    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&crop=center"
+    "use": "Deep wound closure, extended reach procedures, plastic surgery, suturing"
   },
   {
     "id": "dev-028",
     "name": "Surgical Scissors 4.5\" Straight",
     "description": "General purpose straight surgical scissors for cutting tissues and sutures",
-    "use": "Tissue dissection, suture cutting, general surgical procedures",
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center"
+    "use": "Tissue dissection, suture cutting, general surgical procedures"
   },
   {
     "id": "dev-029",
     "name": "Surgical Scissors 5.5\" Curved",
     "description": "Curved surgical scissors for improved access and cutting precision",
-    "use": "Deep tissue dissection, curved incision cutting, gynecological procedures",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center"
+    "use": "Deep tissue dissection, curved incision cutting, gynecological procedures"
   },
   {
     "id": "dev-030",
     "name": "Surgical Scissors 6.75\" Mayo",
     "description": "Heavy-duty Mayo scissors for cutting tough tissues and materials",
-    "use": "Fascia cutting, heavy tissue dissection, orthopedic procedures, bandage removal",
-    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center"
+    "use": "Fascia cutting, heavy tissue dissection, orthopedic procedures, bandage removal"
   },
   {
     "id": "dev-031",
     "name": "Iris Scissors 4\" Curved",
     "description": "Delicate microsurgical scissors for fine tissue cutting",
-    "use": "Microsurgery, ophthalmic surgery, delicate tissue dissection, microvascular procedures",
-    "image": "https://images.unsplash.com/photo-1585435557343-3b092031e2bb?w=400&h=300&fit=crop&crop=center"
+    "use": "Microsurgery, ophthalmic surgery, delicate tissue dissection, microvascular procedures"
   },
   {
     "id": "dev-032",
     "name": "Metzenbaum Scissors 7\" Curved",
     "description": "Long curved scissors for dissecting delicate tissues",
-    "use": "Abdominal surgery, gynecological procedures, delicate tissue dissection",
-    "image": "https://images.unsplash.com/photo-1576670159801-4f05f16b9b0d?w=400&h=300&fit=crop&crop=center"
+    "use": "Abdominal surgery, gynecological procedures, delicate tissue dissection"
   },
   {
     "id": "dev-033",
     "name": "Needle Holder 5\" Standard",
     "description": "Standard size needle holder for suturing procedures",
-    "use": "General surgery, wound closure, tissue approximation, suturing",
-    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center"
+    "use": "General surgery, wound closure, tissue approximation, suturing"
   },
   {
     "id": "dev-034",
     "name": "Needle Holder 6\" Large",
     "description": "Larger needle holder for handling thicker needles and tougher tissues",
-    "use": "Orthopedic surgery, heavy suturing, thick tissue approximation, trauma surgery",
-    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&crop=center"
+    "use": "Orthopedic surgery, heavy suturing, thick tissue approximation, trauma surgery"
   },
   {
     "id": "dev-035",
     "name": "Needle Holder 4.5\" Delicate",
     "description": "Fine needle holder for microsurgical and delicate suturing",
-    "use": "Plastic surgery, microsurgery, ophthalmic procedures, fine suturing",
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center"
+    "use": "Plastic surgery, microsurgery, ophthalmic procedures, fine suturing"
   },
   {
     "id": "dev-036",
     "name": "Army-Navy Retractor Small",
     "description": "Small handheld retractor for exposing surgical sites",
-    "use": "Small incision procedures, superficial tissue retraction, minor surgery",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center"
+    "use": "Small incision procedures, superficial tissue retraction, minor surgery"
   },
   {
     "id": "dev-037",
     "name": "Army-Navy Retractor Medium",
     "description": "Medium handheld retractor for moderate tissue exposure",
-    "use": "General surgery, abdominal procedures, moderate tissue retraction",
-    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center"
+    "use": "General surgery, abdominal procedures, moderate tissue retraction"
   },
   {
     "id": "dev-038",
     "name": "Army-Navy Retractor Large",
     "description": "Large handheld retractor for extensive tissue exposure",
-    "use": "Major abdominal surgery, thoracic procedures, extensive tissue retraction",
-    "image": "https://images.unsplash.com/photo-1585435557343-3b092031e2bb?w=400&h=300&fit=crop&crop=center"
+    "use": "Major abdominal surgery, thoracic procedures, extensive tissue retraction"
   },
   {
     "id": "dev-039",
     "name": "Richards Retractor 8\" Blunt",
     "description": "Blunt-ended retractor for gentle tissue separation",
-    "use": "Abdominal surgery, organ exposure, atraumatic tissue retraction",
-    "image": "https://images.unsplash.com/photo-1576670159801-4f05f16b9b0d?w=400&h=300&fit=crop&crop=center"
+    "use": "Abdominal surgery, organ exposure, atraumatic tissue retraction"
   },
   {
     "id": "dev-040",
     "name": "Richards Retractor 10\" Sharp",
     "description": "Sharp-ended retractor for firm tissue separation",
-    "use": "Deep abdominal surgery, thoracic procedures, firm tissue retraction",
-    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center"
+    "use": "Deep abdominal surgery, thoracic procedures, firm tissue retraction"
   },
   {
     "id": "dev-041",
     "name": "Surgical Hook Small #1",
     "description": "Small surgical hook for retracting delicate tissues",
-    "use": "Microsurgery, ophthalmic procedures, fine tissue retraction",
-    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&crop=center"
+    "use": "Microsurgery, ophthalmic procedures, fine tissue retraction"
   },
   {
     "id": "dev-042",
     "name": "Surgical Hook Medium #2",
     "description": "Medium surgical hook for general tissue retraction",
-    "use": "General surgery, tissue exposure, moderate retraction needs",
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center"
+    "use": "General surgery, tissue exposure, moderate retraction needs"
   },
   {
     "id": "dev-043",
     "name": "Surgical Hook Large #3",
     "description": "Large surgical hook for extensive tissue retraction",
-    "use": "Major surgery, deep tissue exposure, extensive retraction",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center"
+    "use": "Major surgery, deep tissue exposure, extensive retraction"
   },
   {
     "id": "dev-044",
     "name": "Kocher Clamp 6.25\" Straight",
     "description": "Straight Kocher clamp for secure tissue and vessel grasping",
-    "use": "Tissue clamping, vessel occlusion, orthopedic procedures, secure grasping",
-    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center"
+    "use": "Tissue clamping, vessel occlusion, orthopedic procedures, secure grasping"
   },
   {
     "id": "dev-045",
     "name": "Kocher Clamp 8\" Curved",
     "description": "Curved Kocher clamp for improved access to deep tissues",
-    "use": "Deep tissue clamping, curved vessel occlusion, abdominal surgery",
-    "image": "https://images.unsplash.com/photo-1585435557343-3b092031e2bb?w=400&h=300&fit=crop&crop=center"
+    "use": "Deep tissue clamping, curved vessel occlusion, abdominal surgery"
   },
   {
     "id": "dev-046",
     "name": "Pean Clamp 6.25\" Straight",
     "description": "Straight Pean clamp for vascular and tissue control",
-    "use": "Vessel clamping, tissue grasping, general surgical hemostasis",
-    "image": "https://images.unsplash.com/photo-1576670159801-4f05f16b9b0d?w=400&h=300&fit=crop&crop=center"
+    "use": "Vessel clamping, tissue grasping, general surgical hemostasis"
   },
   {
     "id": "dev-047",
     "name": "Pean Clamp 8\" Curved",
     "description": "Curved Pean clamp for deep vessel and tissue access",
-    "use": "Deep vessel clamping, curved tissue grasping, abdominal procedures",
-    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center"
+    "use": "Deep vessel clamping, curved tissue grasping, abdominal procedures"
   },
   {
     "id": "dev-048",
     "name": "Crile Clamp 5.5\" Straight",
     "description": "Small straight Crile clamp for delicate vessel control",
-    "use": "Fine vessel clamping, pediatric surgery, delicate hemostasis",
-    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400&h=300&fit=crop&crop=center"
+    "use": "Fine vessel clamping, pediatric surgery, delicate hemostasis"
   },
   {
     "id": "dev-049",
     "name": "Crile Clamp 6.25\" Curved",
     "description": "Curved Crile clamp for improved access to vessels",
-    "use": "Vessel clamping with curvature, general surgery, hemostasis",
-    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center"
+    "use": "Vessel clamping with curvature, general surgery, hemostasis"
   }
 ]

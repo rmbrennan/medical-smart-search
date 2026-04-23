@@ -18,7 +18,6 @@ class MedicalDevice:
     name: str
     description: str
     use: str
-    image: Optional[str] = None
 
     def full_text(self) -> str:
         """Combine all searchable text fields."""
@@ -81,7 +80,14 @@ class MedicalDeviceSearch:
         """Load devices from JSON file."""
         with open(self.devices_file, "r", encoding="utf-8") as f:
             data = json.load(f)
-        return [MedicalDevice(**item) for item in data]
+
+        cleaned_data = []
+        for item in data:
+            if isinstance(item, dict):
+                item = {k: v for k, v in item.items() if k != "image"}
+            cleaned_data.append(item)
+
+        return [MedicalDevice(**item) for item in cleaned_data]
 
     def _ensure_embeddings(self) -> None:
         """Load or create embeddings cache."""
