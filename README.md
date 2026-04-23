@@ -11,43 +11,71 @@ A smart search tool for medical device inventory that combines semantic similari
 - **Modular Design**: Easy to swap embedding providers or add new search methods
 - **Comprehensive Dataset**: 49 medical devices including size variations and surgical instrument families
 
-## System Architecture
+## Deployment
 
-```mermaid
-graph TD
-    A[User Query] --> B{Search Method}
-    B -->|Combined| C[Run Both Searches]
-    B -->|Semantic| D[Semantic Search Only]
-    B -->|Keyword| E[Keyword Search Only]
+### Local Development
 
-    C --> F[Semantic Search]
-    C --> G[Keyword Search]
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-    F --> H{OpenAI Available?}
-    H -->|Yes| I[Load/Cache Embeddings]
-    H -->|No| J[Skip Semantic Search]
+2. Set up environment variables:
+   ```bash
+   export OPENAI_API_KEY=your_openai_api_key
+   ```
 
-    I --> K[Generate Query Embedding]
-    K --> L[Calculate Cosine Similarity]
-    L --> M[Rank Results by Similarity]
+3. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
 
-    G --> N[Fuzzy Name Matching]
-    N --> O[Keyword Matching in Text]
-    O --> P[Score Combination]
-    P --> Q[Rank Results by Score]
+### Cloud Deployment with Access Control
 
-    M --> R[Combine & Deduplicate Results]
-    Q --> R
-    J --> R
+This app includes authentication for controlled access. To deploy on Streamlit Cloud:
 
-    R --> S[Return Top 3 Results]
-    S --> T[Streamlit UI Display]
+1. **Prepare the Repository**:
+   - Push your code to a GitHub repository
+   - Ensure `requirements.txt` includes `streamlit-authenticator`
 
-    subgraph "Dataset Management"
-        U[Static devices.json] --> V{Dataset Changed?}
-        V -->|Yes| W[Generate New Embeddings]
-        V -->|No| X[Use Cached embeddings.json]
-        W --> Y[Cache for Future Use]
+2. **Set Up Secrets**:
+   - In your repository, create `.streamlit/secrets.toml` (see example in `.streamlit/secrets.toml`)
+   - **Important**: Do NOT commit `secrets.toml` to version control
+   - Instead, set secrets via Streamlit Cloud dashboard or GitHub secrets
+
+3. **Generate Hashed Passwords**:
+   ```python
+   import streamlit_authenticator as stauth
+   hashed_passwords = stauth.Hasher(['password1', 'password2']).generate()
+   print(hashed_passwords)
+   ```
+   Use these hashes in your secrets.
+
+4. **Deploy on Streamlit Cloud**:
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Connect your GitHub account
+   - Select your repository and branch
+   - Set main file path to `app.py`
+   - Add secrets in the advanced settings:
+     - `auth.user1_password`: hashed password for user1
+     - `auth.user2_password`: hashed password for user2
+     - `auth.user1_email`: user1@example.com
+     - `auth.user1_name`: User One
+     - `openai.api_key`: your_openai_api_key
+     - And similar for other users
+
+5. **Share the Link**:
+   - Once deployed, share the generated URL with authorized users
+   - Users will need the username/password you provide to access the app
+
+### Access Control
+
+- The app uses `streamlit-authenticator` for login
+- User sessions are managed with cookies
+- Only pre-authorized users can access the app
+- Add/remove users by updating the secrets configuration
+
+## Usage
     end
 
     subgraph "OpenAI Integration"

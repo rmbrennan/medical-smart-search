@@ -9,7 +9,66 @@ try:
 except ImportError:
     pass  # dotenv not installed, skip
 
+import streamlit_authenticator as stauth
 from search_engine import MedicalDeviceSearch, OpenAIEmbeddingProvider, format_results
+
+# Authentication configuration
+# Load from secrets if available (for deployment), otherwise use defaults
+try:
+    auth_config = {
+        "credentials": {
+            "usernames": {
+                st.secrets.auth.get("user1_username", "user1"): {
+                    "email": st.secrets.auth.get("user1_email", "user1@example.com"),
+                    "name": st.secrets.auth.get("user1_name", "User One"),
+                    "password": st.secrets.auth["user1_password"]
+                },
+                st.secrets.auth.get("user2_username", "user2"): {
+                    "email": st.secrets.auth.get("user2_email", "user2@example.com"),
+                    "name": st.secrets.auth.get("user2_name", "User Two"),
+                    "password": st.secrets.auth["user2_password"]
+                }
+                # Add more users as needed
+            }
+        },
+        "cookie": {
+            "expiry_days": st.secrets.auth.get("cookie_expiry_days", 30),
+            "key": st.secrets.auth.get("cookie_key", "medical_search_auth"),
+            "name": st.secrets.auth.get("cookie_name", "medical_search_cookie")
+        },
+        "preauthorized": {
+            "emails": [st.secrets.auth.get("user1_email", "user1@example.com"), st.secrets.auth.get("user2_email", "user2@example.com")]
+        }
+    }
+except (KeyError, AttributeError):
+    # Fallback for local development
+    st.warning("Secrets not found. Using demo credentials. For production, set up secrets.")
+    auth_config = {
+        "credentials": {
+            "usernames": {
+                "demo": {
+                    "email": "demo@example.com",
+                    "name": "Demo User",
+                    "password": stauth.Hasher(['demo']).generate()[0]  # Hash for 'demo'
+                }
+            }
+        },
+        "cookie": {
+            "expiry_days": 30,
+            "key": "medical_search_auth",
+            "name": "medical_search_cookie"
+        },
+        "preauthorized": {
+            "emails": ["demo@example.com"]
+        }
+    }
+
+authenticator = stauth.Authenticate(
+    auth_config['credentials'],
+    auth_config['cookie']['name'],
+    auth_config['cookie']['key'],
+    auth_config['cookie']['expiry_days']
+)
 
 # Page configuration
 st.set_page_config(
@@ -28,7 +87,7 @@ def initialize_search_engine() -> Optional[MedicalDeviceSearch]:
         devices_file = Path(__file__).parent / "devices.json"
 
         # Try to initialize with OpenAI embeddings
-        api_key = os.getenv("OPENAI_API_KEY")
+        api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("openai", {}).get("api_key")
         if api_key:
             embedding_provider = OpenAIEmbeddingProvider(api_key=api_key)
             return MedicalDeviceSearch(devices_file, embedding_provider)
@@ -42,8 +101,24 @@ def initialize_search_engine() -> Optional[MedicalDeviceSearch]:
         return None
 
 def main():
-    st.title("🏥 Medical Device Smart Search")
-    st.markdown("Search through medical device inventory using intelligent matching")
+    # Authentication
+    name, authentication_status, username = authenticator.login('Login', 'main')
+    
+    if authentication_status == False:
+        st.error('Username/password is incorrect')
+        return
+    
+    if authentication_status == None:
+        st.warning('Please enter your username and password')
+        return
+    
+    if authentication_status:
+        authenticator.logout('Logout', 'main')
+        st.write(f'Welcome *{name}*')
+        
+        # Rest of the app
+        st.title("🏥 Medical Device Smart Search")
+        st.markdown("Search through medical device inventory using intelligent matching")
 
     # Initialize search engine
     if st.session_state.search_engine is None:
