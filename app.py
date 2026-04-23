@@ -9,66 +9,37 @@ try:
 except ImportError:
     pass  # dotenv not installed, skip
 
-import streamlit_authenticator as stauth
+import bcrypt
 from search_engine import MedicalDeviceSearch, OpenAIEmbeddingProvider, format_results
 
 # Authentication configuration
-# Load from secrets if available (for deployment), otherwise use defaults
+# Load user credentials from secrets
 try:
-    auth_config = {
-        "credentials": {
-            "usernames": {
-                "robbie": {
-                    "email": st.secrets.auth.get("robbie_email", "brennan.robert.m@gmail.com"),
-                    "name": st.secrets.auth.get("robbie_name", "Robbie Brennan"),
-                    "password": st.secrets.auth["robbie_password"]
-                },
-                "flo": {
-                    "email": st.secrets.auth.get("flo_email", "fsctsai@gmail.com"),
-                    "name": st.secrets.auth.get("flo_name", "Florence Tsai"),
-                    "password": st.secrets.auth["flo_password"]
-                }
-                # Add more users as needed
-            }
+    USERS = {
+        "robbie": {
+            "email": st.secrets.auth.get("robbie_email", "brennan.robert.m@gmail.com"),
+            "name": st.secrets.auth.get("robbie_name", "Robbie Brennan"),
+            "password": st.secrets.auth["robbie_password"]
         },
-        "cookie": {
-            "expiry_days": st.secrets.auth.get("cookie_expiry_days", 30),
-            "key": st.secrets.auth.get("cookie_key", "medical_search_auth"),
-            "name": st.secrets.auth.get("cookie_name", "medical_search_cookie")
-        },
-        "preauthorized": {
-            "emails": [st.secrets.auth.get("robbie_email", "brennan.robert.m@gmail.com"), st.secrets.auth.get("flo_email", "fsctsai@gmail.com")]
+        "flo": {
+            "email": st.secrets.auth.get("flo_email", "fsctsai@gmail.com"),
+            "name": st.secrets.auth.get("flo_name", "Florence Tsai"),
+            "password": st.secrets.auth["flo_password"]
         }
     }
 except (KeyError, AttributeError):
     # Fallback for local development
-    st.warning("Secrets not found. Using demo credentials. For production, set up secrets.")
-    auth_config = {
-        "credentials": {
-            "usernames": {
-                "demo": {
-                    "email": "demo@example.com",
-                    "name": "Demo User",
-                    "password": stauth.Hasher(['demo']).generate()[0]  # Hash for 'demo'
-                }
-            }
-        },
-        "cookie": {
-            "expiry_days": 30,
-            "key": "medical_search_auth",
-            "name": "medical_search_cookie"
-        },
-        "preauthorized": {
-            "emails": ["demo@example.com"]
+    USERS = {
+        "demo": {
+            "email": "demo@example.com",
+            "name": "Demo User",
+            "password": bcrypt.hashpw("demo".encode(), bcrypt.gensalt()).decode()
         }
     }
 
-authenticator = stauth.Authenticate(
-    auth_config['credentials'],
-    auth_config['cookie']['name'],
-    auth_config['cookie']['key'],
-    auth_config['cookie']['expiry_days']
-)
+def verify_password(password: str, hashed: str) -> bool:
+    """Verify a password against its bcrypt hash."""
+    return bcrypt.checkpw(password.encode(), hashed.encode())
 
 # Page configuration
 st.set_page_config(
@@ -78,6 +49,10 @@ st.set_page_config(
 )
 
 # Initialize session state
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+if "username" not in st.session_state:
+    st.session_state.username = None
 if "search_engine" not in st.session_state:
     st.session_state.search_engine = None
 
@@ -101,24 +76,35 @@ def initialize_search_engine() -> Optional[MedicalDeviceSearch]:
         return None
 
 def main():
-    # Authentication
-    name, authentication_status, username = authenticator.login('Login', 'main')
-    
-    if authentication_status == False:
-        st.error('Username/password is incorrect')
-        return
-    
-    if authentication_status == None:
-        st.warning('Please enter your username and password')
-        return
-    
-    if authentication_status:
-        authenticator.logout('Logout', 'main')
-        st.write(f'Welcome *{name}*')
-        
-        # Rest of the app
+    # Login UI
+    if not st.session_state.authenticated:
         st.title("🏥 Medical Device Smart Search")
-        st.markdown("Search through medical device inventory using intelligent matching")
+        st.markdown("### Login Required")
+        
+        with st.form("login_form"):
+            username = st.text_input("Username", placeholder="robbie or flo")
+            password = st.text_input("Password", type="password")
+            submit = st.form_submit_button("Login")
+        
+        if submit:
+            if username in USERS and verify_password(password, USERS[username]["password"]):
+                st.session_state.authenticated = True
+                st.session_state.username = username
+                st.rerun()
+            else:
+                st.error("❌ Invalid username or password")
+        return
+    
+    # Authenticated - show app
+    with st.sidebar:
+        st.write(f"Logged in as: **{USERS[st.session_state.username]['name']}**")
+        if st.button("Logout"):
+            st.session_state.authenticated = False
+            st.session_state.username = None
+            st.rerun()
+    
+    st.title("🏥 Medical Device Smart Search")
+    st.markdown("Search through medical device inventory using intelligent matching")
 
     # Initialize search engine
     if st.session_state.search_engine is None:
