@@ -18,6 +18,7 @@ class MedicalDevice:
     name: str
     description: str
     use: str
+    image: Optional[str] = None
 
     def full_text(self) -> str:
         """Combine all searchable text fields."""
