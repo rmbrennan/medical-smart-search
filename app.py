@@ -18,15 +18,15 @@ try:
     auth_config = {
         "credentials": {
             "usernames": {
-                st.secrets.auth.get("user1_username", "user1"): {
-                    "email": st.secrets.auth.get("user1_email", "user1@example.com"),
-                    "name": st.secrets.auth.get("user1_name", "User One"),
-                    "password": st.secrets.auth["user1_password"]
+                "robbie": {
+                    "email": st.secrets.auth.get("robbie_email", "brennan.robert.m@gmail.com"),
+                    "name": st.secrets.auth.get("robbie_name", "Robbie Brennan"),
+                    "password": st.secrets.auth["robbie_password"]
                 },
-                st.secrets.auth.get("user2_username", "user2"): {
-                    "email": st.secrets.auth.get("user2_email", "user2@example.com"),
-                    "name": st.secrets.auth.get("user2_name", "User Two"),
-                    "password": st.secrets.auth["user2_password"]
+                "flo": {
+                    "email": st.secrets.auth.get("flo_email", "fsctsai@gmail.com"),
+                    "name": st.secrets.auth.get("flo_name", "Florence Tsai"),
+                    "password": st.secrets.auth["flo_password"]
                 }
                 # Add more users as needed
             }
@@ -37,7 +37,7 @@ try:
             "name": st.secrets.auth.get("cookie_name", "medical_search_cookie")
         },
         "preauthorized": {
-            "emails": [st.secrets.auth.get("user1_email", "user1@example.com"), st.secrets.auth.get("user2_email", "user2@example.com")]
+            "emails": [st.secrets.auth.get("robbie_email", "brennan.robert.m@gmail.com"), st.secrets.auth.get("flo_email", "fsctsai@gmail.com")]
         }
     }
 except (KeyError, AttributeError):
