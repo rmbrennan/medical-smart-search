@@ -292,5 +292,35 @@
     "name": "Crile Clamp 6.25\" Curved",
     "description": "Curved Crile clamp for improved access to vessels",
     "use": "Vessel clamping with curvature, general surgery, hemostasis"
+  },
+  {
+    "id": "dev-050",
+    "name": "Ray-Tec Surgical Sponge",
+    "description": "Small, radiopaque sterile sponge used for absorbing fluids and protecting tissue during surgical procedures",
+    "use": "Wound packing, fluid absorption, tissue protection, surgical field maintenance"
+  },
+  {
+    "id": "dev-051",
+    "name": "Laparotomy Sponge",
+    "description": "Large, radiopaque sponge designed for use in open abdominal surgery to absorb blood and protect organs",
+    "use": "Abdominal surgery, blood absorption, organ protection, maintaining surgical hemostasis"
+  },
+  {
+    "id": "dev-052",
+    "name": "Gauze Sponge",
+    "description": "Soft, woven cotton sponge used for wound dressing and gentle cleansing of surgical sites",
+    "use": "Wound dressing, wound cleansing, applying antiseptic solutions, gentle tissue care"
+  },
+  {
+    "id": "dev-053",
+    "name": "Gelatin Sponge",
+    "description": "Absorbable hemostatic sponge used to control bleeding in surgical and dental procedures",
+    "use": "Hemostasis, wound packing, dental surgery, bone defect management"
+  },
+  {
+    "id": "dev-054",
+    "name": "Polyurethane Foam Sponge",
+    "description": "Flexible medical foam sponge used for wound management and absorbing exudate",
+    "use": "Negative pressure wound therapy, wound packing, exudate absorption, pressure redistribution"
   }
 ]
